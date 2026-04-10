@@ -1,4 +1,4 @@
-package com.konecranes.pages;
+package com.konecranes.core;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;

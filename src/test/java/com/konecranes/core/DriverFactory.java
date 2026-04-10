@@ -30,6 +30,6 @@ public class DriverFactory {
     public static void tearDown() {
         if(context != null) context.close();
         if(playwright != null) playwright.close();
-        //page.remove();
+        page.remove();
     }
 }
