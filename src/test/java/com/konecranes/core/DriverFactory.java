@@ -16,7 +16,7 @@ public class DriverFactory {
                 new BrowserType.LaunchOptions().setHeadless(true)
         );
 
-        BrowserContext context = browser.newContext();
+        context = browser.newContext();
         page.set(context.newPage());
     }
 
