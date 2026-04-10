@@ -20,13 +20,23 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
 
-      - name: Install dependencies
+      - name: Install Playwright dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            libnss3 libatk-bridge2.0-0 libgtk-3-0 libxss1 libasound2 \
-            libx11-xcb1 libxcomposite1 libxdamage1 libxrandr2 libgbm1 \
-            libpango-1.0-0 libcairo2 libatspi2.0-0
+            libnss3 \
+            libatk-bridge2.0-0 \
+            libgtk-3-0 \
+            libxss1 \
+            libasound2t64 \
+            libx11-xcb1 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libgbm1 \
+            libpango-1.0-0 \
+            libcairo2 \
+            libatspi2.0-0
 
       - name: Run tests (with logs)
         run: ./gradlew clean test --info --stacktrace
