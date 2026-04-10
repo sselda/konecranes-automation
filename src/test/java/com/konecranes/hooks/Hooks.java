@@ -27,15 +27,6 @@ public class Hooks {
             byte[] screenshot = DriverFactory.getPage().screenshot();
             scenario.attach(screenshot, "image/png", "Successfully Screenshot");
         }
-        //VIDEO ATTACH
-
-        if (scenario.isFailed()) {
-            Video videoBytes = DriverFactory.getPage().video();
-            scenario.attach(String.valueOf(videoBytes), "video/mp4", "Failure Execution Video");
-        } else {
-            Video videoBytes = DriverFactory.getPage().video();
-            scenario.attach(String.valueOf(videoBytes), "video/mp4", "Successfully Execution Video");
-        }
 
         DriverFactory.tearDown();
 

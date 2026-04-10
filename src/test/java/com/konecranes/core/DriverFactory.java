@@ -12,7 +12,7 @@ public class DriverFactory {
 
     public static void initBrowser() {
         playwright = Playwright.create();
-        Browser browser = playwright.chromium().launch(
+        browser = playwright.chromium().launch(
                 new BrowserType.LaunchOptions().setHeadless(true)
         );
 
