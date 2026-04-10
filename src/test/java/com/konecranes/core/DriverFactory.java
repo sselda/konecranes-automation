@@ -12,14 +12,11 @@ public class DriverFactory {
 
     public static void initBrowser() {
         playwright = Playwright.create();
-        context = playwright.chromium().launchPersistentContext(
-                Paths.get("user-data"),
-                new BrowserType.LaunchPersistentContextOptions()
-                        .setChannel("chrome")
-                        .setHeadless(false)
-
+        Browser browser = playwright.chromium().launch(
+                new BrowserType.LaunchOptions().setHeadless(true)
         );
 
+        BrowserContext context = browser.newContext();
         page.set(context.newPage());
     }
 
