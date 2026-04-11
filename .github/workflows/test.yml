@@ -48,13 +48,13 @@ jobs:
           path: gh-pages
         continue-on-error: true
 
+      - name: Generate Allure Report
+        run: ./gradlew allureReport
+
       - name: Copy Allure history
         run: |
           mkdir -p build/reports/allure-report/history
-          cp -r gh-pages/allureReport/history/* build/reports/allure-report/history/ || true  
-
-      - name: Generate Allure Report
-        run: ./gradlew allureReport
+          cp -r gh-pages/allure-report/history/* build/reports/allure-report/history/ || true  
 
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
