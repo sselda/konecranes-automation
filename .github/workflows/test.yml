@@ -39,7 +39,7 @@ jobs:
             libatspi2.0-0
 
       - name: Run tests (with logs)
-        run: ./gradlew clean test --info --stacktrace
+        run: ./gradlew clean test --parallel --info --stacktrace
 
       - name: Generate Allure Report
         run: ./gradlew allureReport
