@@ -41,6 +41,18 @@ jobs:
       - name: Run tests (with logs)
         run: ./gradlew clean test --parallel --info --stacktrace
 
+      - name: Load previous Allure history
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+        continue-on-error: true
+
+      - name: Copy Allure history
+        run: |
+          mkdir -p build/reports/allure-report/history
+          cp -r gh-pages/history/* build/reports/allure-report/history/ || true  
+
       - name: Generate Allure Report
         run: ./gradlew allureReport
 
@@ -49,3 +61,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build/reports/allure-report
+
+
+

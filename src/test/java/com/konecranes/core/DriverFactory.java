@@ -1,7 +1,6 @@
 package com.konecranes.core;
 
 import com.microsoft.playwright.*;
-import java.nio.file.Paths;
 
 public class DriverFactory {
 

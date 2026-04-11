@@ -1,5 +1,6 @@
 package com.konecranes.steps;
 
+import com.konecranes.config.Config;
 import com.konecranes.core.DriverFactory;
 import com.konecranes.core.PageManager;
 import com.konecranes.pages.HomePage;
@@ -22,7 +23,7 @@ public class HomepageSteps {
         pageManager = new PageManager(page);
         homePage = pageManager.getHomePage();
 
-        page.navigate("https://www.konecranes.com/");
+        page.navigate(Config.getBaseUrl());
         page.waitForLoadState();
     }
 

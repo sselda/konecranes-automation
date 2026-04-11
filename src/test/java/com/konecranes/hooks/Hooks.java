@@ -3,7 +3,6 @@ package com.konecranes.hooks;
 import com.konecranes.components.CookieBannerComponent;
 import com.konecranes.core.DriverFactory;
 import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Video;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
