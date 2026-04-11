@@ -51,7 +51,7 @@ jobs:
       - name: Copy Allure history
         run: |
           mkdir -p build/reports/allure-report/history
-          cp -r gh-pages/history/* build/reports/allure-report/history/ || true  
+          cp -r gh-pages/allureReport/history/* build/reports/allure-report/history/ || true  
 
       - name: Generate Allure Report
         run: ./gradlew allureReport
