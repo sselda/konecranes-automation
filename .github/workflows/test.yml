@@ -39,6 +39,7 @@ jobs:
             libatspi2.0-0
 
       - name: Run tests (with logs)
+        if: github.event_name == 'push'
         run: ./gradlew clean test --parallel --info --stacktrace
 
       - name: Import Gherkin scenarios to Xray
@@ -51,7 +52,7 @@ jobs:
             -H "Authorization: Bearer $TOKEN" \
             -H "Content-Type: multipart/form-data" \
             -F "file=@src/test/resources/features/homepage.feature" \
-            -F "projectKey=BAZINGA"
+            -F "projectKey=E2E"
 
       - name: Upload results to Xray
         run: |
@@ -63,7 +64,7 @@ jobs:
             "info": {
               "summary": "Automation Execution",
               "description": "Execution from GitHub Actions",
-              "project": "BAZINGA"
+              "project": "E2E"
             }
           }' > test-exec.json
 
