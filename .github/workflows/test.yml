@@ -9,8 +9,8 @@ workflow_dispatch:
 jobs:
 test:
 runs-on: ubuntu-latest
-  
-  ```
+
+
 steps:
   - uses: actions/checkout@v4
 
@@ -43,7 +43,6 @@ steps:
   - name: Run tests
     run: ./gradlew clean test --info
 
-  # 🟢 STEP 1: Create Tests from feature file
   - name: Import feature to Xray (create tests)
     run: |
       TOKEN=$(curl -s -X POST "https://xray.cloud.getxray.app/api/v2/authenticate" \
@@ -54,7 +53,6 @@ steps:
         -H "Authorization: Bearer $TOKEN" \
         -F "file=@src/test/resources/features/homepage.feature"
 
-  # 🟢 STEP 2: Upload execution results
   - name: Upload results to Xray
     if: always()
     run: |
