@@ -75,8 +75,8 @@ jobs:
 
           curl -v -X POST "https://xray.cloud.getxray.app/api/v2/import/execution/cucumber/multipart" \
             -H "Authorization: Bearer $TOKEN" \
-            -F "info=@test-exec.json" \
-            -F "results=@build/cucumber-report.json"
+            -F "info=@test-exec.json;type=application/json" \
+            -F "results=@build/cucumber-report.json;type=application/json"
 
       - name: Load previous Allure history
         uses: actions/checkout@v4
