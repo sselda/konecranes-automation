@@ -1,6 +1,6 @@
 Feature: Homepage
 
-  @BAZINGA-2
+  @BAZINGA-1
   Scenario: Open homepage
     Given user opens the homepage
     Then homepage should be displayed
