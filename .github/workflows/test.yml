@@ -69,17 +69,11 @@ jobs:
             -H "Content-Type: application/json" \
             -d "{\"client_id\":\"${{ secrets.XRAY_CLIENT_ID }}\",\"client_secret\":\"${{ secrets.XRAY_CLIENT_SECRET }}\"}" | tr -d '"')
 
-          cat <<EOF > test-exec.json
-          {
-            "info": {
-              "summary": "Automation Execution",
-              "description": "Execution from GitHub Actions",
-              "project": "E2E"
-            }
-          }
-          EOF
+          echo '{"info":{"summary":"Automation Execution","description":"Execution from GitHub Actions","project":"E2E"}}' > test-exec.json
 
-          curl -X POST "https://xray.cloud.getxray.app/api/v2/import/execution/cucumber/multipart" \
+          cat test-exec.json
+
+          curl -v -X POST "https://xray.cloud.getxray.app/api/v2/import/execution/cucumber/multipart" \
             -H "Authorization: Bearer $TOKEN" \
             -F "info=@test-exec.json" \
             -F "results=@build/cucumber-report.json"
