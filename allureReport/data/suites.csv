@@ -1,3 +1,3 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Apr 12 19:47:07 UTC 2026","Sun Apr 12 19:47:12 UTC 2026","4773","","Homepage","","Search functionality","","Search functionality",""
-"passed","Sun Apr 12 19:46:45 UTC 2026","Sun Apr 12 19:47:07 UTC 2026","22356","","Homepage","","Open homepage","","Open homepage",""
+"passed","Sun Apr 12 19:52:27 UTC 2026","Sun Apr 12 19:52:42 UTC 2026","15079","","Homepage","","Open homepage","","Open homepage",""
+"passed","Sun Apr 12 19:52:42 UTC 2026","Sun Apr 12 19:52:45 UTC 2026","3220","","Homepage","","Search functionality","","Search functionality",""
