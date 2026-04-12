@@ -69,7 +69,7 @@ jobs:
             -H "Content-Type: application/json" \
             -d "{\"client_id\":\"${{ secrets.XRAY_CLIENT_ID }}\",\"client_secret\":\"${{ secrets.XRAY_CLIENT_SECRET }}\"}" | tr -d '"')
 
-          echo '{"info":{"summary":"Automation Execution","description":"Execution from GitHub Actions","project":"E2E"}}' > test-exec.json
+          echo '{"info":{"summary":"Automation Execution","description":"Execution from GitHub Actions"}}' > test-exec.json
 
           cat test-exec.json
 
