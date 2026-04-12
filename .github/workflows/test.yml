@@ -43,6 +43,7 @@ jobs:
         run: ./gradlew clean test --parallel --info --stacktrace
 
       - name: Debug cucumber file
+        if: github.event_name == 'push'
         run: |
           echo "---- BUILD CONTENT ----"
           ls -la build/
@@ -56,11 +57,10 @@ jobs:
             -H "Content-Type: application/json" \
             -d "{\"client_id\":\"${{ secrets.XRAY_CLIENT_ID }}\",\"client_secret\":\"${{ secrets.XRAY_CLIENT_SECRET }}\"}" | tr -d '"')
 
-          curl -X POST "https://xray.cloud.getxray.app/api/v2/import/feature" \
+          curl -X POST "https://xray.cloud.getxray.app/api/v2/import/feature?projectKey=E2E" \
             -H "Authorization: Bearer $TOKEN" \
             -H "Content-Type: multipart/form-data" \
-            -F "file=@src/test/resources/features/homepage.feature" \
-            -F "projectKey=E2E"
+            -F "file=@src/test/resources/features/homepage.feature"
 
       - name: Upload results to Xray
         if: github.event_name == 'push'
@@ -81,8 +81,8 @@ jobs:
 
           curl -X POST "https://xray.cloud.getxray.app/api/v2/import/execution/cucumber/multipart" \
             -H "Authorization: Bearer $TOKEN" \
-            -F "info=@test-exec.json" \  
-            -F "results=build/cucumber-report.json"
+            -F "info=@test-exec.json" \
+            -F "results=@build/cucumber-report.json"
 
       - name: Load previous Allure history
         uses: actions/checkout@v4
