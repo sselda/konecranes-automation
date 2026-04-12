@@ -5,7 +5,7 @@ Feature: Homepage
     Given user opens the homepage
     Then homepage should be displayed
 
-  @BAZINGA-2
+  @BAZINGA-7
   Scenario: Search functionality
     Given user opens the homepage
     When user click the search button
