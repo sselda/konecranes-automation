@@ -42,3 +42,9 @@ allure {
 test {
     useJUnitPlatform()
 }
+
+test {
+    useJUnitPlatform()
+
+    systemProperty "cucumber.plugin", "json:build/cucumber.json"
+}
