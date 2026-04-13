@@ -71,8 +71,8 @@ jobs:
 
           echo "CREATING JSON FILE..."
           
-          echo '{"fields":{"project":"Automation Execution","description":"Execution from GitHub Actions","project":"E2E"}}' > test-exec.json
-
+          echo '{"fields":{"project":{"key":"E2E"},"summary":"Automation Execution","description":"Execution from GitHub Actions"}}' > test-exec.json
+         
           echo "CHECK FILE:"
           ls -la
           cat test-exec.json
