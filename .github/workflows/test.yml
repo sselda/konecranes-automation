@@ -75,7 +75,7 @@ jobs:
                 "key": "E2E"
               },
               "summary": "Automation Execution",
-              "description": "Execution from GitHub Actions",
+              "description": "Execution from GitHub Actions"
             }
           }' > test-exec.json
           
