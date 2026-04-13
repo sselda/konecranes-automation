@@ -71,7 +71,7 @@ jobs:
 
           echo "CREATING JSON FILE..."
           
-          echo '{"info":{"summary":"Automation Execution","description":"Execution from GitHub Actions"}}' > test-exec.json
+          echo '{"info":{"summary":"Automation Execution","description":"Execution from GitHub Actions","project":"E2E"}}' > test-exec.json
 
           echo "CHECK FILE:"
           ls -la
