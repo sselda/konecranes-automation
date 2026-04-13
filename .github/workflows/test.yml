@@ -60,7 +60,7 @@ jobs:
           curl -X POST "https://xray.cloud.getxray.app/api/v2/import/feature?projectKey=E2E" \
             -H "Authorization: Bearer $TOKEN" \
             -H "Content-Type: multipart/form-data" \
-            -F "file=@src/test/resources/features/homepage.feature"
+            -F "file=@src/test/resources/features/craneservice.feature"
 
       - name: Upload results to Xray
         if: github.event_name == 'push'
