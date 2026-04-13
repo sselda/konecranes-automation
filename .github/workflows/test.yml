@@ -70,17 +70,21 @@ jobs:
             -d "{\"client_id\":\"${{ secrets.XRAY_CLIENT_ID }}\",\"client_secret\":\"${{ secrets.XRAY_CLIENT_SECRET }}\"}" | tr -d '"')
 
           echo '{
-            "info": {
+            "fields": {
+              "project": {
+                "key": "E2E"
+              },
               "summary": "Automation Execution",
               "description": "Execution from GitHub Actions",
-              "project": "E2E"
             }
           }' > test-exec.json
+          
+          cat test-exec.json
 
           curl -X POST "https://xray.cloud.getxray.app/api/v2/import/execution/cucumber/multipart" \
             -H "Authorization: Bearer $TOKEN" \
-            -F "info=@test-exec.json;type=application/json" \
-            -F "results=@build/cucumber-report.json;type=application/json"
+            -F "info=@test-exec.json" \
+            -F "results=@build/cucumber-report.json"
 
       - name: Load previous Allure history
         uses: actions/checkout@v4
