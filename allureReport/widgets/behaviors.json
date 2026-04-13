@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"d757020284559bc1a38ee21b80742ffc","name":"Homepage","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}
+{"total":4,"items":[{"uid":"d757020284559bc1a38ee21b80742ffc","name":"Homepage","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}},{"uid":"86cc967d7a1447456e7df10bd9e4402a","name":"Crane load validation","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}

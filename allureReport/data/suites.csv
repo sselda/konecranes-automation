@@ -1,3 +1,6 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Apr 12 19:58:34 UTC 2026","Sun Apr 12 19:58:38 UTC 2026","4016","","Homepage","","Search functionality","","Search functionality",""
-"passed","Sun Apr 12 19:58:16 UTC 2026","Sun Apr 12 19:58:33 UTC 2026","17252","","Homepage","","Open homepage","","Open homepage",""
+"passed","Mon Apr 13 08:35:56 UTC 2026","Mon Apr 13 08:36:08 UTC 2026","12383","","Crane load validation","","Lifting load within crane capacity","","Lifting load within crane capacity",""
+"passed","Mon Apr 13 08:36:08 UTC 2026","Mon Apr 13 08:36:11 UTC 2026","2701","","Homepage","","Open homepage","","Open homepage",""
+"passed","Mon Apr 13 08:35:56 UTC 2026","Mon Apr 13 08:35:56 UTC 2026","24","","com.konecranes.service.tests.CraneServiceTest","","com.konecranes.service.tests.CraneServiceTest","shouldAllowValidLoad","shouldAllowValidLoad()",""
+"passed","Mon Apr 13 08:36:11 UTC 2026","Mon Apr 13 08:36:14 UTC 2026","3049","","Homepage","","Search functionality","","Search functionality",""
+"passed","Mon Apr 13 08:35:56 UTC 2026","Mon Apr 13 08:35:56 UTC 2026","24","","com.konecranes.service.tests.CraneServiceTest","","com.konecranes.service.tests.CraneServiceTest","shouldThrowExceptionWhenOverCapacity","shouldThrowExceptionWhenOverCapacity()",""
