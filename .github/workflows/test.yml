@@ -77,9 +77,10 @@ jobs:
             --data @build/cucumber-report.json)
           
           echo "XRAY RESPONSE:"
-          echo $RESPONSE
+          echo "$RESPONSE"
           
           EXECUTION_KEY=$(echo $RESPONSE | grep -o '"key""[^"]*"' | cut -d':' -f2 | tr -d '"')
+          
           echo "TEST EXECUTION KEY: $EXECUTION_KEY"
           
           echo "EXECUTION_KEY=$EXECUTION_KEY" >> $GITHUB_ENV
