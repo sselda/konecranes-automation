@@ -76,18 +76,18 @@ jobs:
             -H "Content-Type: application/json" \
             --data @build/cucumber-report.json)
           
-          echo "XRAY RESPONSE:"
-          echo "$RESPONSE"
+         echo "XRAY RESPONSE:"
+         echo "$RESPONSE"
           
-          EXECUTION_KEY=$(echo $RESPONSE | grep -o '"key""[^"]*"' | cut -d':' -f2 | tr -d '"')
+         EXECUTION_KEY=$(echo $RESPONSE | grep -o '"key""[^"]*"' | cut -d':' -f2 | tr -d '"')
+                    
+         echo "TEST EXECUTION KEY: $EXECUTION_KEY"
           
-          echo "TEST EXECUTION KEY: $EXECUTION_KEY"
-          
-          echo "EXECUTION_KEY=$EXECUTION_KEY" >> $GITHUB_ENV
+         echo "EXECUTION_KEY=$EXECUTION_KEY" >> $GITHUB_ENV
 
       - name: Print Xray Execution Link
         run: |
-          echo "https://sseldabozkurt.atlassian.net/browse/$EXECUTION_KEY"
+         echo "https://sseldabozkurt.atlassian.net/browse/$EXECUTION_KEY"
 
       - name: Load previous Allure history
         uses: actions/checkout@v4
